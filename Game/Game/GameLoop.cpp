@@ -42,13 +42,12 @@ void GameLoop::Event()
 	{
 		GameState = false;
 	}
-	if (event1.type == SDL_MOUSEMOTION)
+	if (event1.type == SDL_KEYDOWN)
 	{
-		cout << event1.motion.x << "  " << event1.motion.y << endl;
-	}
-	if (event1.type == SDL_MOUSEBUTTONDOWN)
-	{
-		cout << "Pressed!" << endl;
+		if (event1.key.keysym.sym == SDLK_UP)
+		{
+			cout << "pressed!" << endl;
+		}
 	}
 }
 
