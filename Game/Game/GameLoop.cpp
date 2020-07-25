@@ -23,6 +23,7 @@ void GameLoop::Intialize()
 		{
 			cout << "Succeeded!" << endl;
 			GameState = true;
+			player = TextureManager::Texture("Image/6.png", renderer);
 		}
 		else
 		{
@@ -54,6 +55,7 @@ void GameLoop::Event()
 void GameLoop::Render()
 {
 	SDL_RenderClear(renderer);
+	SDL_RenderCopy(renderer, player, NULL, NULL);
 	SDL_RenderPresent(renderer);
 }
 

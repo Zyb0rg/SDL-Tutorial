@@ -1,5 +1,5 @@
 ﻿  GameLoop.cpp
-  main.cpp
   TextureManager.cpp
+  main.cpp
   Generating Code...
   Game.vcxproj -> C:\Askari\SDL Tutorials\Game\x64\Debug\Game.exe
