@@ -15,9 +15,11 @@ private:
 	SDL_Event event1;
 	SDL_Renderer* renderer;
 	SDL_Texture* player;
+	SDL_Rect srcPlayer, destPlayer;
 public:
 	GameLoop();
 	bool getGameState();
+	void Update();
 	void Intialize();
 	void Event();
 	void Render();

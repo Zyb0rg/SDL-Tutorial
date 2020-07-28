@@ -52,10 +52,24 @@ void GameLoop::Event()
 	}
 }
 
+void GameLoop::Update()
+{
+	// Source Dimension:
+	srcPlayer.h = 60;
+	srcPlayer.w = 80;
+	srcPlayer.x = srcPlayer.y = 0;
+
+	// Destination Dimension:
+	destPlayer.w = 80;
+	destPlayer.h = 60;
+	destPlayer.x = 10;
+	destPlayer.y++;
+}
+
 void GameLoop::Render()
 {
 	SDL_RenderClear(renderer);
-	SDL_RenderCopy(renderer, player, NULL, NULL);
+	SDL_RenderCopy(renderer, player, &srcPlayer, &destPlayer);
 	SDL_RenderPresent(renderer);
 }
 
