@@ -24,6 +24,7 @@ void GameLoop::Intialize()
 			cout << "Succeeded!" << endl;
 			GameState = true;
 			player = TextureManager::Texture("Image/6.png", renderer);
+			background = TextureManager::Texture("Image/background.png", renderer);
 		}
 		else
 		{
@@ -63,12 +64,13 @@ void GameLoop::Update()
 	destPlayer.w = 80;
 	destPlayer.h = 60;
 	destPlayer.x = 10;
-	destPlayer.y++;
+	destPlayer.y = 10;
 }
 
 void GameLoop::Render()
 {
 	SDL_RenderClear(renderer);
+	SDL_RenderCopy(renderer, background, NULL, NULL);
 	SDL_RenderCopy(renderer, player, &srcPlayer, &destPlayer);
 	SDL_RenderPresent(renderer);
 }
