@@ -5,6 +5,10 @@ GameLoop::GameLoop()
 	window = NULL;
 	renderer = NULL;
 	GameState = false;
+	// Source Dimension:
+	p.setSource(0, 0, 80, 60);
+	// Destination Dimension:
+	p.setDest(100, 200, 80, 60);
 }
 
 bool GameLoop::getGameState()
@@ -21,19 +25,19 @@ void GameLoop::Intialize()
 		renderer = SDL_CreateRenderer(window, -1, 0);
 		if (renderer)
 		{
-			cout << "Succeeded!" << endl;
+			std::cout << "Succeeded!" << std::endl;
 			GameState = true;
-			player = TextureManager::Texture("Image/6.png", renderer);
-			background = TextureManager::Texture("Image/background.png", renderer);
+			p.CreateTexture("Image/6.png", renderer);
+			b.CreateTexture("Image/background.png", renderer);
 		}
 		else
 		{
-			cout << "Not created!" << endl;
+			std::cout << "Not created!" << std::endl;
 		}
 	}
 	else
 	{
-		cout << "window not created!" << endl;
+		std::cout << "window not created!" << std::endl;
 	}
 }
 
@@ -48,30 +52,21 @@ void GameLoop::Event()
 	{
 		if (event1.key.keysym.sym == SDLK_UP)
 		{
-			cout << "pressed!" << endl;
+			std::cout << "pressed!" << std::endl;
 		}
 	}
 }
 
 void GameLoop::Update()
 {
-	// Source Dimension:
-	srcPlayer.h = 60;
-	srcPlayer.w = 80;
-	srcPlayer.x = srcPlayer.y = 0;
 
-	// Destination Dimension:
-	destPlayer.w = 80;
-	destPlayer.h = 60;
-	destPlayer.x = 10;
-	destPlayer.y = 10;
 }
 
 void GameLoop::Render()
 {
 	SDL_RenderClear(renderer);
-	SDL_RenderCopy(renderer, background, NULL, NULL);
-	SDL_RenderCopy(renderer, player, &srcPlayer, &destPlayer);
+	b.Render(renderer, b.getTexture());
+	p.Render(renderer, p.getTexture(), p.getSrc(), p.getDest());
 	SDL_RenderPresent(renderer);
 }
 
