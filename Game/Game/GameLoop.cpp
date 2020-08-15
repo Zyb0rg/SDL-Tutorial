@@ -5,10 +5,8 @@ GameLoop::GameLoop()
 	window = NULL;
 	renderer = NULL;
 	GameState = false;
-	// Source Dimension:
-	p.setSource(0, 0, 80, 60);
-	// Destination Dimension:
-	p.setDest(100, 200, 80, 60);
+	p.setSrc(0, 0, 60, 80);
+	p.setDest(10, 10, 60, 80);
 }
 
 bool GameLoop::getGameState()
@@ -59,14 +57,14 @@ void GameLoop::Event()
 
 void GameLoop::Update()
 {
-
+	p.Update();
 }
 
 void GameLoop::Render()
 {
 	SDL_RenderClear(renderer);
-	b.Render(renderer, b.getTexture());
-	p.Render(renderer, p.getTexture(), p.getSrc(), p.getDest());
+	b.Render(renderer);
+	p.Render(renderer);
 	SDL_RenderPresent(renderer);
 }
 

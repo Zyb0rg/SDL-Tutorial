@@ -3,7 +3,10 @@
 
 class Player :public Object
 {
+private:
+    double gravity = 1;
 public:
-    void Render(SDL_Renderer* ren, SDL_Texture* Tex, SDL_Rect src, SDL_Rect dest);
+    void Update();
+    void Render(SDL_Renderer* ren);
 };
 

@@ -1,6 +1,14 @@
 #include "Player.h"
+#include<iostream>
 
-void Player::Render(SDL_Renderer* ren, SDL_Texture* Tex, SDL_Rect src, SDL_Rect dest)
+void Player::Render(SDL_Renderer* ren)
 {
-	SDL_RenderCopy(ren, Tex, &src, &dest);
+	SDL_RenderCopy(ren, getTexture(), &getSrc(), &getDest());
+}
+
+void Player::Update()
+{
+	gravity = gravity + 0.5;
+	setSrc(0, 0, 60, 80);
+	setDest(0, gravity, 60, 80);
 }

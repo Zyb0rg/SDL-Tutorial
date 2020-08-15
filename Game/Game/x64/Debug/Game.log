@@ -1,2 +1,3 @@
-﻿  GameLoop.cpp
+﻿  main.cpp
+C:\Askari\SDL Tutorials\Game\Game\main.cpp(18,19): warning C4244: 'argument': conversion from 'double' to 'Uint32', possible loss of data
   Game.vcxproj -> C:\Askari\SDL Tutorials\Game\x64\Debug\Game.exe

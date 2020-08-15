@@ -3,7 +3,6 @@
 #include<SDL_image.h>
 #include<iostream>
 #include"Player.h"
-#include"Object.h"
 #include"Background.h"
 
 class GameLoop
@@ -17,7 +16,6 @@ private:
 	SDL_Window* window;
 	SDL_Event event1;
 	SDL_Renderer* renderer;
-	SDL_Texture* background;
 public:
 	GameLoop();
 	bool getGameState();
