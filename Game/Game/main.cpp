@@ -16,7 +16,6 @@ int main(int argc, char** argv)
 		if (first - last < 16.7)
 		{
 			SDL_Delay(16.7 - (first - last));
-			std::cout << 1000 / ((16.7 - (first - last)) + (first - last)) << std::endl;
 		}
 		last = first;
 	}

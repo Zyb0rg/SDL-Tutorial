@@ -10,7 +10,8 @@ class GameLoop
 private:
 	Player p;
 	Background b;
-	const int HEIGHT = 640;
+	Background ground1,ground2;
+	const int HEIGHT = 600;
 	const int WIDTH = 800;
 	bool GameState;
 	SDL_Window* window;
